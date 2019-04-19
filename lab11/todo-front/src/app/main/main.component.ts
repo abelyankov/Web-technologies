@@ -1,28 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { ITaskList } from '../itask-list';
-import { TaskListService } from '../task-list.service';
+import { TaskListSevice } from '../task-list.service';
+import {Location} from '@angular/common';
 
 @Component({
-  selector: 'app-main',
+  selector: 'app-task-list',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  title = 'Django';
-  task_list: ITaskList[];
-  constructor(private taskListService: TaskListService) { }
+
+  public taskLists: ITaskList[] =[];
+
+  constructor(
+    private provider: TaskListSevice,
+    private location: Location
+  ) { }
 
   ngOnInit() {
-    this.getTaskLists();
+    this.provider.getTaskLists().then(res => {
+      this.taskLists = res;
+    })
   }
-
-  getTaskLists(): void{
-    // this.task_list = this.taskListService.getTaskLists();
-    this.taskListService.getTaskLists()
-      .then(task_list => {
-        this.task_list = task_list;
-        console.log('tasklist', this.task_list);
-      });
-  }
-
 }

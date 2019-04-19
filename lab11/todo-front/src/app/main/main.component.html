@@ -1,9 +1,14 @@
-<div style="text-align:center">
-  <p>{{title}}</p>
-<ul>
-  <li *ngFor='let t_list of task_list'>
-    <p>{{t_list.id}}</p> 
-    <p>{{t_list.name}}</p>
-  </li>
-</ul> 
-</div>
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Tasks</th>
+  </tr>
+  <tr *ngFor="let taskList of taskLists">
+    <td>{{taskList.id}}</td>
+    <td>{{taskList.name}}</td>
+    <td>
+      <a routerLink="/task_lists/{{taskList.id}}/tasks">Tasks</a>
+    </td>
+  </tr>
+</table>

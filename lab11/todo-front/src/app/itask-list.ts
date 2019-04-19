@@ -1,8 +1,19 @@
 export interface ITaskList {
-    id: string;
+    id: number;
     name: string;
 }
 
-function createTaskList(id: string, name: string): ITaskList {
-    return { id: id, name: name };
+export interface ITask {
+    id: number;
+    name: string;
+    created_at: string;
+    due_on: string;
+    status: string;
 }
+
+export interface ITaskDetail {
+    id: number;
+    name: string;
+    status: string;
+}
+
