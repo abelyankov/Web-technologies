@@ -16,7 +16,7 @@ export class TaskListSevice extends MainService {
    public sendMessage = new EventEmitter<string>();
 
   getTaskLists(): Promise<ITaskList[]> {
-    return this.get('http://127.0.0.1:8000/task_lists', {});
+    return this.get('http://localhost:8000/task_lists', {});
   }
 
   getTaskListDetail(id: number): Promise<ITaskList> {
