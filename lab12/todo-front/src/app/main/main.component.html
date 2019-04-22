@@ -1,0 +1,16 @@
+<div class="ui piled segment" style="margin: 10px 20px 0px 20px">
+  <table class=" ui table">
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Tasks</td>
+    </tr>
+    <tr *ngFor="let taskList of taskLists">
+      <td>{{taskList.id}}</td>
+      <td>{{taskList.name}}</td>
+      <td>
+        <a routerLink="/task_lists/{{taskList.id}}/tasks">Tasks</a>
+      </td>
+    </tr>
+  </table>
+</div>
