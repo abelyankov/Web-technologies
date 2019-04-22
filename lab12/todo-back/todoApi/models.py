@@ -11,8 +11,8 @@ class TaskList(models.Model):
 
     def to_json_list(self):
         return {
-            'id' : self.id,
-            'name' : self.name
+            'id': self.id,
+            'name': self.name
         }
 
 

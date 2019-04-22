@@ -10,7 +10,8 @@ import {Location} from '@angular/common';
 })
 export class MainComponent implements OnInit {
 
-  public taskLists: ITaskList[] =[];
+  public taskLists: ITaskList[] = [];
+  public name: any = '';
 
   constructor(
     private provider: TaskListSevice,
@@ -20,6 +21,30 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.provider.getTaskLists().then(res => {
       this.taskLists = res;
-    })
+    });
+  }
+
+  updateTaskList(taskList: ITaskList) {
+    this.provider.updateTaskList(taskList).then(res => {
+      console.log(taskList.name + ' updated');
+    });
+  }
+
+  deleteTaskList(taskList: ITaskList) {
+    this.provider.deleteTaskList(taskList.id).then(res => {
+      console.log(taskList.name + ' deleted');
+      this.provider.getTaskLists().then(r => {
+        this.taskLists = r;
+      });
+    });
+  }
+
+  createTaskList() {
+    if (this.name !== '') {
+      this.provider.createTaskList(this.name).then(res => {
+        this.name = '';
+        this.taskLists.push(res);
+      });
+    }
   }
 }

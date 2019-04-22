@@ -29,4 +29,20 @@ export class TaskListSevice extends MainService {
   getTaskDetail(id: number): Promise<ITask> {
     return this.get(`http://localhost:8000/tasks/${id}`, {});
   }
+
+  createTaskList(name: any): Promise<ITaskList> {
+    return this.post('http://localhost:8000/task_lists/', {
+      name: name
+    });
+  }
+  updateTaskList(taskList: ITaskList) {
+    return this.put(`http://localhost:8000/task_lists/${taskList.id}/`, {
+      name: taskList.name
+    });
+  }
+
+  deleteTaskList(id: number): Promise<any> {
+    return this.delet(`http://localhost:8000/task_lists/${id}/`, {
+    });
+  }
 }

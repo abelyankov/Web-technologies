@@ -8,6 +8,7 @@ import { MainComponent } from './main/main.component';
 import { TaskListSevice } from './task-list.service';
 import { TaskListDetailComponent } from './task-list-detail/task-list-detail.component';
 import { TaskDetailComponent } from './task-detail/task-detail.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { TaskDetailComponent } from './task-detail/task-detail.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ TaskListSevice ],
   bootstrap: [AppComponent]
