@@ -29,4 +29,8 @@ export class TaskDetailComponent implements OnInit {
       })
     }
   }
+
+  navigateBack(){
+    this.location.back()
+  }
 }
