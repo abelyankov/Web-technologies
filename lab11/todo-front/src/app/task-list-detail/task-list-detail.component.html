@@ -1,16 +1,23 @@
-<h2>Tasks for Task List: {{taskList.name}}</h2>
-<table class="table">
-  <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Status</th>
-  </tr>
-  <tr *ngFor="let task of tasks">
-    <td>{{task.id}}</td>
-    <td>{{task.name}}</td>
-    <td>{{task.status}}</td>
-    <td>
-      <a routerLink="/tasks/{{task.id}}/">Details</a> 
-    </td>
-  </tr>
-</table>
+
+  <h2 class="ui header" style="margin-left: 20px">
+    {{taskList.name}} tasks
+  </h2>
+
+<div class="ui piled segment" style="padding: auto; margin: 10px 20px 0px 20px;">
+  <table class="ui table">
+    <tr>
+      <td>Id</td>
+      <td>Name</td>
+      <td>Status</td>
+      <td>Details</td>
+    </tr>
+    <tr *ngFor="let task of tasks">
+      <td>{{task.id}}</td>
+      <td>{{task.name}}</td>
+      <td>{{task.status}}</td>
+      <td>
+        <a routerLink="/tasks/{{task.id}}/">Details</a>
+      </td>
+    </tr>
+  </table>
+</div>

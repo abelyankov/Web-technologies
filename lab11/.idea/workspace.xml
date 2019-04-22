@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d9acb41-6ad9-4cb9-bd5c-31d5403dc9b9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-front/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo-front/angular.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo-front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo-front/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo-front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo-front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-front/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/todo-front/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-front/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo-front/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/todo-front/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-front/src/app/itask-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/todo-front/src/app/itask-list.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-front/src/app/itask.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-front/src/app/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo-front/src/app/main/main.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-front/src/app/main/main.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/todo-front/src/app/main/main.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-front/src/app/task-list.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/todo-front/src/app/task-list.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-front/src/app/task.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-front/src/app/task.service.ts" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -207,12 +197,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12453000" />
+    <option name="totallyTimeSpent" value="12480000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -225,7 +215,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4992636" visible="true" weight="0.24939759" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4992636" visible="true" weight="0.2807229" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50073636" side_tool="true" weight="0.32900432" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
