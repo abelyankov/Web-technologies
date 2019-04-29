@@ -7,7 +7,7 @@ import { ITaskDetail } from '../app/itask-list';
 @Injectable({
   providedIn: 'root'
 })
-export class TaskListSevice extends MainService {
+export class TaskListService extends MainService {
 
   constructor(http: HttpClient) {
     super(http);

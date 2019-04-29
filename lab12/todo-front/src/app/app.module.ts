@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
-import { TaskListSevice } from './task-list.service';
+import { TaskListService } from './task-list.service';
 import { TaskListDetailComponent } from './task-list-detail/task-list-detail.component';
 import { TaskDetailComponent } from './task-detail/task-detail.component';
 import {FormsModule} from '@angular/forms';
@@ -24,7 +24,7 @@ import {FormsModule} from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ TaskListSevice ],
+  providers: [ TaskListService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -23,7 +23,7 @@ export class TaskListDetailComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.id = parseInt(this.route.snapshot.paramMap.get('id'))
+    this.id = parseInt(this.route.snapshot.paramMap.get('id'));
     if (this.id) {
       this.provider.getTaskListTasks(this.id).then(res => {
         this.tasks = res;
