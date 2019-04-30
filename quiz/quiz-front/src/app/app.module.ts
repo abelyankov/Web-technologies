@@ -5,13 +5,17 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
-import {AuthInterceptor} from './AuthInterceptor';
+// import {AuthInterceptor} from './AuthInterceptor';
 import {ProviderService} from './provider.service';
+import { MainComponent } from './main/main.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainComponent,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -20,12 +24,12 @@ import {ProviderService} from './provider.service';
     FormsModule
   ],
   providers: [
-    ProviderService,
-    <ClassProvider> {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    }
+    ProviderService
+    // <ClassProvider> {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: AuthInterceptor,
+    //   multi: true
+    // }
   ],
   bootstrap: [AppComponent]
 })
