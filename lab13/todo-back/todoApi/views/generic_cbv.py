@@ -4,7 +4,7 @@ from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.pagination import LimitOffsetPagination
 
-from todoApi.models import TaskList
+from todoApi.models import TaskList, Task
 from todoApi.serializers import TaskListSerializer2, TaskSerializer
 
 
@@ -22,18 +22,17 @@ class TaskLists(generics.ListCreateAPIView):
 class TaskListDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = TaskList.objects.all()
     serializer_class = TaskListSerializer2
+    permission_classes = (IsAuthenticated,)
 
 
 class TaskListOfTask(generics.ListCreateAPIView):
+    queryset = Task.objects.all()
     serializer_class = TaskSerializer
     pagination_class = LimitOffsetPagination
+    permission_classes = (IsAuthenticated,)
 
     def get_queryset(self):
-        try:
-            category = TaskList.objects.get(id=self.kwargs.get('pk'))
-        except TaskList.DoesNotExist:
-            raise Http404
-        queryset = category.products.all()
+        return Task.objects.for_user(self.request.user)
 
-
-        return queryset
+    def perform_create(self, serializer):
+        serializer.save(created_by=self.request.user)

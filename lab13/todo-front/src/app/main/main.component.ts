@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ITaskList } from '../itask-list';
-import { TaskListSevice } from '../task-list.service';
+import { TaskListService } from '../task-list.service';
 import {Location} from '@angular/common';
 
 @Component({
@@ -12,14 +12,28 @@ export class MainComponent implements OnInit {
 
   public taskLists: ITaskList[] = [];
   public name: any = '';
+  public isLogged = false;
+  public login = '';
+  public password = '';
 
   constructor(
-    private provider: TaskListSevice,
-    private location: Location
-  ) { }
+    private provider: TaskListService) { }
 
   ngOnInit() {
-    this.provider.getTaskLists().then(res => {
+
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.isLogged = true;
+    }
+
+    if (this.isLogged) {
+      this.getTaskLists();
+    }
+
+  }
+
+  getTaskLists() {
+    this.provider.getTaskList().then(res => {
       this.taskLists = res;
     });
   }
@@ -33,7 +47,7 @@ export class MainComponent implements OnInit {
   deleteTaskList(taskList: ITaskList) {
     this.provider.deleteTaskList(taskList.id).then(res => {
       console.log(taskList.name + ' deleted');
-      this.provider.getTaskLists().then(r => {
+      this.provider.getTaskList().then(r => {
         this.taskLists = r;
       });
     });
@@ -46,5 +60,22 @@ export class MainComponent implements OnInit {
         this.taskLists.push(res);
       });
     }
+  }
+
+  auth() {
+    if (this.login !== '' && this.password !== '') {
+      this.provider.auth(this.login, this.password).then(res => {
+        localStorage.setItem('token', res.token);
+        this.isLogged = true;
+        this.getTaskLists();
+      });
+    }
+  }
+
+  logout() {
+    this.provider.logout().then(res => {
+      this.isLogged = false;
+      localStorage.clear();
+    });
   }
 }

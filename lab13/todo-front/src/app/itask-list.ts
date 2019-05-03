@@ -17,3 +17,7 @@ export interface ITaskDetail {
     status: string;
 }
 
+export interface IAuthResponse {
+  token: string;
+}
+

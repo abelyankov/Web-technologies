@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskListSevice } from '../task-list.service';
+import { TaskListService } from '../task-list.service';
 import { ActivatedRoute } from '@angular/router';
 import {Location} from '@angular/common'
 import { ITaskDetail } from '../itask-list';
@@ -17,7 +17,7 @@ export class TaskListDetailComponent implements OnInit {
   public id: number;
 
   constructor(
-    private provider: TaskListSevice,
+    private provider: TaskListService,
     private route: ActivatedRoute,
     private location: Location
     ) { }

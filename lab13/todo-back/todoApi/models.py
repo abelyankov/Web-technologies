@@ -7,6 +7,10 @@ class TaskListCreator(models.Manager):
     def for_user(self, user):
         return self.filter(created_by=user)
 
+class TaskCreator(models.Manager):
+    def for_user(self, user):
+        return self.filter(created_by=user)
+
 class TaskList(models.Model):
     name = models.CharField(max_length=100)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=2)
@@ -19,7 +23,8 @@ class TaskList(models.Model):
     def to_json_list(self):
         return {
             'id': self.id,
-            'name': self.name
+            'name': self.name,
+            'create_by': self.created_by
         }
 
 
@@ -29,6 +34,9 @@ class Task(models.Model):
     due_on = models.DateTimeField()
     status = models.CharField(max_length=40)
     task_list = models.ForeignKey(TaskList, on_delete=models.CASCADE, related_name='tasks')
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=2)
+
+    objects = TaskCreator()
 
     def __str__(self):
         return '{} : {}'.format(self.id, self.name)
