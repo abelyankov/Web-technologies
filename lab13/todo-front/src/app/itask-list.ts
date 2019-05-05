@@ -1,6 +1,7 @@
 export interface ITaskList {
     id: number;
     name: string;
+    created_by: string;
 }
 
 export interface ITask {

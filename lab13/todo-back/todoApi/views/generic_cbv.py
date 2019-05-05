@@ -10,10 +10,10 @@ from todoApi.serializers import TaskListSerializer2, TaskSerializer
 
 class TaskLists(generics.ListCreateAPIView):
     serializer_class = TaskListSerializer2
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated, )
 
     def get_queryset(self):
-        return TaskList.objects.for_user(self.request.user)
+        return TaskList.objects.all()
 
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)

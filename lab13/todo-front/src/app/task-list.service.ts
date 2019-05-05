@@ -28,9 +28,9 @@ export class TaskListService extends MainService {
     return this.get(`http://127.0.0.1:8000/tasks/${id}`, {});
   }
 
-  createTaskList(name: any): Promise<ITaskList> {
+  createTaskList(name: any, user: any): Promise<ITaskList> {
     return this.post('http://127.0.0.1:8000/task_lists/', {
-      name: name
+      name: name, created_by: user
     });
   }
   updateTaskList(taskList: ITaskList) {
@@ -44,10 +44,10 @@ export class TaskListService extends MainService {
     });
   }
 
-  auth(login: string, password: string): Promise<IAuthResponse> {
+  auth(login: string, hey: string): Promise<IAuthResponse> {
     return this.post('http://127.0.0.1:8000/login/', {
       username: login,
-      password: password,
+      password: hey,
     });
   }
 

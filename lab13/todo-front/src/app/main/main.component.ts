@@ -12,6 +12,7 @@ export class MainComponent implements OnInit {
 
   public taskLists: ITaskList[] = [];
   public name: any = '';
+  public user = '';
   public isLogged = false;
   public login = '';
   public password = '';
@@ -55,8 +56,9 @@ export class MainComponent implements OnInit {
 
   createTaskList() {
     if (this.name !== '') {
-      this.provider.createTaskList(this.name).then(res => {
+      this.provider.createTaskList(this.name, this.user).then(res => {
         this.name = '';
+        this.user = 'arthurbelyankov';
         this.taskLists.push(res);
       });
     }
@@ -66,6 +68,7 @@ export class MainComponent implements OnInit {
     if (this.login !== '' && this.password !== '') {
       this.provider.auth(this.login, this.password).then(res => {
         localStorage.setItem('token', res.token);
+        sessionStorage.setItem('token', res.token);
         this.isLogged = true;
         this.getTaskLists();
       });
