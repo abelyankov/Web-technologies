@@ -67,8 +67,7 @@ export class MainComponent implements OnInit {
   auth() {
     if (this.login !== '' && this.password !== '') {
       this.provider.auth(this.login, this.password).then(res => {
-        localStorage.setItem('token', res.token);
-        sessionStorage.setItem('token', res.token);
+        localStorage.setItem('token', res.Token);
         this.isLogged = true;
         this.getTaskLists();
       });

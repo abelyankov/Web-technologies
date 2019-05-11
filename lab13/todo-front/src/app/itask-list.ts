@@ -19,6 +19,6 @@ export interface ITaskDetail {
 }
 
 export interface IAuthResponse {
-  token: string;
+  Token: string;
 }
 
